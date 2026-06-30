@@ -16,7 +16,7 @@ spec:
     - name: gcp-key
       mountPath: /secret
   - name: kubectl
-    image: google/cloud-sdk:slim
+    image: google/cloud-sdk:latest
     command:
     - sleep
     args:
@@ -63,6 +63,8 @@ spec:
             steps {
                 container('kubectl') {
                     sh """
+                        apt-get install -y kubectl google-cloud-sdk-gke-gcloud-auth-plugin
+                        export USE_GKE_GCLOUD_AUTH_PLUGIN=True
                         gcloud auth activate-service-account --key-file=/secret/key.json
                         gcloud container clusters get-credentials portfolio-cluster --zone europe-west1-b --project ${PROJECT_ID}
                         kubectl set image deployment/portfolio-app portfolio-app=${IMAGE}:${TAG}

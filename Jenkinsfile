@@ -33,7 +33,7 @@ spec:
     }
 
     environment {
-        PROJECT_ID = "devops-portfolio-ivo-2026"
+        PROJECT_ID = "devops-portfolio-2026-v2"
         IMAGE      = "europe-west1-docker.pkg.dev/${PROJECT_ID}/portfolio-repo/portfolio-app"
         TAG        = "${env.BUILD_NUMBER}"
     }

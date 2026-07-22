@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: portfolio-app
-          image: europe-west1-docker.pkg.dev/devops-portfolio-ivo-2026/portfolio-repo/portfolio-app:v1
+          image: europe-west1-docker.pkg.dev/devops-portfolio-2026-v2/portfolio-repo/portfolio-app:v1
           ports:
             - containerPort: 8080
           readinessProbe:
